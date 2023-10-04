@@ -1,20 +1,16 @@
 package hotelReservation;
-
-import com.google.gson.Gson;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import model.User;
 
 public class HotelReservationSystem {
 
     static Scanner sc= new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("Welcome to Hotel Reservation System:\n");
+        System.out.println("***********************************");
+        ChooseOptions();
+    }
+
+    public static void ChooseOptions() {
 
         while (true) {
             displayMainMenu();
@@ -29,6 +25,8 @@ public class HotelReservationSystem {
 
                 case 2:
                     System.out.println("start Reservation");
+                    StartReservation sr = new StartReservation();
+                    sr.StartUserReservation();
                     break;
 
                 case 3:
@@ -54,9 +52,10 @@ public class HotelReservationSystem {
         }
     }
 
+
     public static void displayMainMenu() {
 
-        System.out.println("Choolse an option:");
+        System.out.println("Choose an option:");
         System.out.println("1. Create an account");
         System.out.println("2. Start your reservation");
         System.out.println("3. Cancel your reservation");
